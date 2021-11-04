@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: url('/images/bodybg2.jpg') no-repeat center/cover;
+	--black: hsl(240, 6%, 13%);
+  	--grey: hsl(240, 9%, 89%);
+  	height: 100%;
+  	font-family: 'Patrick Hand', cursive;
+  	--webkit-font-smoothing: antialiased;  	
+  	width: 100%;
+  	height: 25%;	
+}
+
+/*Personalizando o scroolbar*/
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--grey);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #14DBC7;    /* color of the scroll thumb */
+  border-radius: 5px;       /* roundness of the scroll thumb */
+  border: 1px solid var(--black);  /* creates padding around scroll thumb */
+}
+/*fim da personalização*/
+.userInfo{
+	background: transparent;
+	border-style: none;
+}
+
+#userLogged, #userLogout{
+	text-align: right;
+	margin-right: 1rem;
+	
+}
+#userLogged span, #userLogout span{
+	font-size: 2rem;	
+}
+
+
+#titleWrapper{
+	margin: 0 auto;
+	margin-top: 2rem;
+	display: block;
+	width: 950px;
+}
+#titleWrapper h1{	
+	text-align:center;	
+}
+
+ul{
+	list-style: none;
+}
+
+#navigator ul {
+	display: flex;
+	gap: 5rem;
+	justify-content: center;
+	margin-bottom: 1.2rem;
+	
+}
+
+
+#navigator ul li{
+	font-weight: bold;
+	color:var(--black);
+	padding: 0.25rem 0.45rem;
+}
+
+ul li .button a{
+	font-size: 1.2rem;
+}
+
+.button{
+  background: rgba(255, 255, 255, .9);
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: .5rem 0 0 0;
+  padding: 10px 30px;
+  border: 2px solid #000;
+  transition: .5s;
+}
+
+.button:hover{
+  
+  background: #FFF; 
+  border: 2px solid #14DBC7;
+  filter: brightness(1);
+  transition: filter .5s;
+}
+
+a{
+ text-decoration:none;
+ color: #000;
+ font-weight:bold;
+}
+
+
+a.button{
+  
+  background: transparent;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 20px 0;
+  padding: 10px 30px;
+  border: 2px solid #FFF;
+}
+
+a.button:hover{
+	
+	border: 2px solid rgba(69, 39, 160, .4);
+}
+
+
+
+main{
+	background: url("/images/mainbg.jpg") no-repeat center/cover;
+	width: 100%;
+  	height:100vh;	
+  	border-top: 3px dashed #FFF;
+  	border-bottom: 3px dashed #FFF;
+}
+
+table{
+	color:var(--grey);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#keywords {
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+
+#keywords thead {
+  cursor: pointer;
+  background: rgba(201,223,240,.9);  
+}
+
+#titleTable{
+	background: rgba(255, 255, 255, .85);
+	margin: 0 auto;
+	margin-top: 2.5rem;	
+	display: block;
+	width: 500px;
+}
+
+h2{
+	font-family: 'Patrick Hand', cursive;
+	text-align: center;
+	margin: 0 0 2rem 0;
+	padding: .5rem 0;
+	font-size: 3rem;
+}
+
+#keywords thead tr th { 
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+#keywords thead tr th span { 
+  padding-right: 5px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  color: var(--black);
+}
+
+#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#keywords thead tr th span i{
+	color:  #FFF;
+	background: #000;
+	padding: 0 2.5px;
+}
+
+#keywords thead tr th.headerSortUp span {
+  background-image: url('https://i.imgur.com/SP99ZPJ.png');
+}
+
+#keywords thead tr th.headerSortDown span {
+  background-image: url('https://i.imgur.com/RkA9MBo.png');
+}
+
+
+#keywords tbody tr { 
+  color: var(--black);
+  background: rgba(255, 255, 255, .9);
+}
+
+#keywords tbody tr td {
+  text-align: center;
+  padding: 15px 5px;
+}
+
+#keywords tbody tr td.lalign {
+  text-align: center;
+}
+
+
+
+a.button{
+  display:block;
+  float:left;
+  margin: 0px;
+  padding: 6px 6px;
+  border: 1px solid #FFF;
+  border-radius:20px;
+}
+
+a.red{
+  background:rgb(225,0,0);
+  color: #FFF;
+}
+
+a.green{
+  background:rgb(0,225,0);
+  color: #FFF;
+}
+
+a.button:hover{
+	border: 1px solid rgba(69, 39, 160, .4);
+}
+
+footer{
+	background: rgba(255, 255, 255, .7);
+	padding: .25rem 0;
+	
+}
+
+footer p{
+	font-size: 1rem;
+	margin-left: .5rem;
+}

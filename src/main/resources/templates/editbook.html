@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Editando cadastro...</title>
+		<link rel="stylesheet" href="/css/style-registerbook.css">
+	</head>
+	<body>
+		<main>
+			<form action="#" th:action="@{/save}" th:object="${book}" method="post">
+				<h1>Editar cadastro do livro</h1>
+				
+				<label>ID </label> <br> <input type="text" th:field="*{id}" placeholder="" readonly> <br>
+				<label>Nome </label> <br> <input type="text" th:field="*{bookName}" placeholder=""> <br>
+				<label>Autor </label> <br> <input type="text" th:field="*{bookAuthor}" placeholder=""> <br>
+				<label>Editora </label> <br> <input type="text" th:field="*{bookPublishCompany}" placeholder=""> <br>
+				<label>Edição </label> <br> <input type="text" th:field="*{bookEdition}" placeholder=""> <br>
+				<label>Quantidade em estoque </label> <br> <input type="text" th:field="*{bookQuantityStock}" placeholder=""> <br>
+				<label>Preço </label> <br> <input type="text" th:field="*{bookPrice}" placeholder=""> <br>
+				<button id="edit" type="submit" onclick="editMessage()">Editar</button>
+				<button><a href="/literarycollection">Cancelar</a></button>
+				
+			</form>
+		</main>	
+		<script type="text/javascript" src="/js/main.js"></script>
+	</body>
+</html>

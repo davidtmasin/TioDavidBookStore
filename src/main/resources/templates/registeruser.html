@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+	<head>	
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cadastrando novo usuário</title>
+		<link href="/css/style-registerbook.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+   		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<form action="#" th:action="@{/saveUser}" th:object="${login}" method="post">
+					<h1>Novo Usuário</h1>
+					
+					<label>Nome Completo </label> <br> <input type="text" th:field="*{fullName}" placeholder=""><br>
+					<label>Nome do usuário </label> <br> <input type="text" th:field="*{userName}" placeholder=""><br>
+					<label>Senha </label> <br> <input type="password" th:field="*{userPassword}" placeholder=""><br>
+					<button type="submit" onclick="registerUserMessage()">Cadastrar</button>
+					<button><a href="/">Cancelar</a></button>									
+		</form>
+		<script type="text/javascript" src="/js/main.js"></script>
+	</body>
+</html>

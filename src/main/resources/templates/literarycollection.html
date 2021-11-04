@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Tio David Bookstore</title>
+		
+		<link rel="shortcut icon" href="/images/logo7.png" type="image/x-icon">
+		
+		<link rel="stylesheet" href="/css/style-literarycollection.css" />
+		
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/d37c5443c6.js" crossorigin="anonymous"></script>
+		
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+   		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+    	
+	</head>
+	<body>
+		<header>
+			<form method="post" action="/logoutUser">				
+					<div id="userLogged">
+						<span>Logado como: </span><b><span th:text="${session.userLogged.fullName}"></span></b>
+					</div>				
+					<div id="userLogout">
+						<button class="userInfo" type="submit">
+							<span class="glyphicon glyphicon-log-out" title="Encerrar sessão"></span><span> Sair</span>
+						</button>		
+					</div>							
+			</form>			
+			
+			<div id="titleWrapper">
+			<!--	<h1>Livraria do Tio David</h1>   -->
+				<h1>
+					<img alt="Livraria do Tio David" src="/images/logo6.png">
+				</h1>
+			</div>
+			
+			<nav id="navigator">
+				<ul>
+					<li><button class="button" title="Cadastre um livro"><a href="newBook">Novo Livro</a></button></li>
+					<li><button class="button" title="Saiba sobre o desenvolvedor"><a href="https://linktr.ee/davidtmasin" target=_blank>Sobre o Dev</a></button></li>
+				</ul>
+			</nav>		
+		</header>
+		<main>
+			<section>
+				<article>
+					<table class="sortable" id="keywords" border="1" cellspacing="0" cellpadding="0">
+										
+						<thead title="Clique aqui para ordenar">						
+							<div id="titleTable">
+								<h2>Nosso acervo literário</h2>
+							</div>														
+							<tr>
+								<th ><span>ID </span></th>
+								<th><span>Título </span></th>
+								<th><span>Autor </span></th>
+								<th><span>Editora </span></th>
+								<th><span>Edição </span></th>
+								<th><span>Qtde. </span></th>
+								<th><span>Preço (R$) </span></th>
+								<th><span>Ações </span></th>
+							</tr>							
+						</thead>
+						
+						<tbody>
+							<tr th:each="book: ${books}">
+								<td th:text="${book.id}" >ID</td>
+								<td class="lalign" th:text="${book.bookName}">Nome do livro</td>
+								<td class="lalign" th:text="${book.bookAuthor}">Autor do livro</td>
+								<td class="lalign" th:text="${book.bookPublishCompany}">Editora do livro</td>
+								<td class="lalign" th:text="${book.bookEdition}">Edição do livro</td>
+								<td th:text="${book.bookQuantityStock}">Quantidade em estoque</td>
+								<td th:text="${book.bookPrice}">Preço do livro</td>
+								<td>
+									<a title="Clique aqui para editar este livro" th:href="@{'/edit/' + ${book.id}}" class="button green"><span><i class="fa fa-edit"></i></span></a>
+									<a title="Clique aqui para deletar este livro" th:href="@{'/delete/' + ${book.id}}" class="button red" id="delete" onclick="deleteMessage()"><span><i class="fa fa-trash"></i></span></a>
+								</td>
+							</tr>
+						</tbody>
+								
+					</table>				
+				</article>
+			</section>
+		</main>	
+		<script type="text/javascript" src="/js/main.js"></script>
+		<script src="/js/sorttable.js"></script>
+		
+	</body>
+</html>

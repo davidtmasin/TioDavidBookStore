@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+	<head>	
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cadastrando novo livro</title>
+		<link href="/css/style-registerbook.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+   		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<form action="#" th:action="@{/save}" th:object="${book}" method="post">
+					<h1>Novo Livro</h1>
+					
+					<label>Título </label> <br> <input type="text" th:field="*{bookName}" placeholder=""><br>
+					<label>Autor </label> <br> <input type="text" th:field="*{bookAuthor}" placeholder=""><br>
+					<label>Editora </label> <br> <input type="text" th:field="*{bookPublishCompany}" placeholder=""><br>
+					<label>Edição </label> <br> <input type="text" th:field="*{bookEdition}" placeholder=""><br>
+					<label>Qtde. </label> <br> <input type="text" th:field="*{bookQuantityStock}" placeholder=""><br>
+					<label>Preço(R$) </label> <br> <input type="text" th:field="*{bookPrice}" placeholder=""><br>
+					<button id="register" type="submit" onclick="registerMessage()">Cadastrar</button>
+					<button><a href="/literarycollection">Cancelar</a></button>
+									
+		</form>
+		<script type="text/javascript" src="/js/main.js"></script>
+	</body>
+</html>
